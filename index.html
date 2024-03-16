@@ -16,13 +16,14 @@
 
 
     <h1>JSON Data Display</h1>
-    <div id="jsonData"></div>
+    <div id="keyword"></div>
     <script>
         window.onload = function() {
             fetch('https://5c16-153-150-176-69.ngrok-free.app')
                 .then(response => response.json())
                 .then(data => {
-                    const jsonDataDiv = document.getElementById('jsonData');
+                    const jsonDataDiv = document.getElementById('keyword');
+                    console.log("succeed")
                     jsonDataDiv.innerHTML = JSON.stringify(data, null, 2);
                 })
                 .catch(error => console.error('Error fetching data:', error));
