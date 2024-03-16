@@ -14,6 +14,23 @@
     </form>
     <ul id="keywordList"></ul>
 
+
+    <h1>JSON Data Display</h1>
+    <div id="jsonData"></div>
+    <script>
+        window.onload = function() {
+            fetch('https://5c16-153-150-176-69.ngrok-free.app/api/keywords')
+                .then(response => response.json())
+                .then(data => {
+                    const jsonDataDiv = document.getElementById('jsonData');
+                    jsonDataDiv.innerHTML = JSON.stringify(data, null, 2);
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        };
+    </script>
+
+
+
     <script src="frontend.js"></script>
 </body>
 </html>
