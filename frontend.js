@@ -5,14 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch keywords from the backend and render them in the UI
     const fetchKeywords = async () => {
-        keywordList.innerHTML = '';
-        const response = await fetch('https://5c16-153-150-176-69.ngrok-free.app');
-        const keywords = await response.json();
-        keywords.forEach(keyword => {
-            const li = document.createElement('li');
-            li.textContent = keyword.keyword;
-            keywordList.appendChild(li);
-        });
+        try{
+            keywordList.innerHTML = '';
+            const response = await fetch('https://5c16-153-150-176-69.ngrok-free.app');
+            const keywords = await response.json();
+            keywords.forEach(keyword => {
+                const li = document.createElement('li');
+                li.textContent = keyword.keyword;
+                keywordList.appendChild(li);
+            });
+        }catch(e){
+            console.log("heyhibiki", e)
+
+        }
+     
     };
 
     // // Fetch initial keywords when the page loads
