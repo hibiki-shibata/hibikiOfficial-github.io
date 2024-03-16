@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to fetch keywords from the backend and render them in the UI
     const fetchKeywords = async () => {
         keywordList.innerHTML = '';
-        const response = await fetch('/api/keywords');
+        const response = await fetch('https://5c16-153-150-176-69.ngrok-free.app/api/keywords');
         const keywords = await response.json();
         keywords.forEach(keyword => {
             const li = document.createElement('li');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const keyword = keywordInput.value.trim();
         if (keyword) {
-            await fetch('/api/keywords', {
+            await fetch('https://5c16-153-150-176-69.ngrok-free.app/api/keywords', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
