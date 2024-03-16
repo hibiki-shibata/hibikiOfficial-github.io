@@ -19,7 +19,7 @@
     <div id="jsonData"></div>
     <script>
         window.onload = function() {
-            fetch('https://5c16-153-150-176-69.ngrok-free.app/api/keywords')
+            fetch('https://5c16-153-150-176-69.ngrok-free.app')
                 .then(response => response.json())
                 .then(data => {
                     const jsonDataDiv = document.getElementById('jsonData');

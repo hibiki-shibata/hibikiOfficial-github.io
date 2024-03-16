@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('DOMContentLoaded', async () => {
         try {
             // Fetch keywords from the backend API
-            const response = await fetch('https://5c16-153-150-176-69.ngrok-free.app/api/keywords');
+            const response = await fetch('https://5c16-153-150-176-69.ngrok-free.app');
             
             if (response.ok) {
                 // Parse the response as JSON
