@@ -7,12 +7,19 @@
 </head>
 <body>
     <h1>Yuho Keywords Manager😗</h1>
-    <form id="keywordForm">
-        <label for="keyword">Keyword:</label>
-        <input type="text" id="keyword" name="keyword">
-        <button type="submit">Add Keyword</button>
-    </form>
-    <ul id="keywordList" onload="fetchKeywords()"></ul>
+
+    <h2>Add keywords</h2>
+    
+        <label for="keyword1">Keyword:</label>
+        <input type="text" id="inputKeyword">
+        <button onclick="addKeyword()">Add Keyword</button>
+    
+    <!-- <ul id="keywordList" onload="fetchKeywords()"></ul> -->
+
+    <h2>Delete Keyword:</h2>
+    <label for="keyword2">Keyword:</label>
+    <input type="text" id="deleteKeywordInput">
+    <button onclick="deleteKeyword()">Delete Keyword</button>
 
 
     <h2>Key words</h2>
@@ -21,7 +28,8 @@
     </ul>
 
     <script>
-        // Fetch data from backend
+    
+        // Fetch data list when the page loaded
         fetch('http://localhost:3000')
             .then(response => response.json())
             .then(data => {
@@ -34,10 +42,47 @@
                 });
             })
             .catch(error => console.error('Error:', error));
+
+
+
+        // Add keyword
+        function addKeyword(){
+            const keywordInput = document.getElementById('inputKeyword');            
+            const hibikikeyword = keywordInput.value.trim();
+                if (hibikikeyword) {
+                    fetch('http://localhost:3000/add/keywords',  {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ hibikikeyword })
+                    });
+                    keywordInput.value = '';
+                    // fetchKeywords();
+                }
+        }
+       
+
+        // delete keyword
+        function deleteKeyword() {
+            const deleteKeywordInput = document.getElementById('deleteKeywordInput');
+            const hibikikeyword = deleteKeywordInput.value.trim();
+            if (hibikikeyword) {
+                fetch(`http://localhost:3000/delete/keywords`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ hibikikeyword })
+                });
+                deleteKeywordInput.value = '';
+            }
+        }
+
     </script>
 
 
 
-    <script src="frontend.js"></script>
+    <!-- <script src="frontend.js"></script> -->
 </body>
 </html>
