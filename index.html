@@ -38,7 +38,7 @@
     <script>
     
         // Fetch data list when the page loaded
-        fetch('http://localhost:4000')
+        fetch('https://74f0-153-150-176-69.ngrok-free.app')
             .then(response => response.json())
             .then(data => {
                 // Update the DOM with the received data
@@ -58,7 +58,7 @@
             const keywordInput = document.getElementById('inputKeyword');            
             const hibikikeyword = keywordInput.value.trim();
                 if (hibikikeyword) {
-                    fetch('http://localhost:4000/add/keywords',  {
+                    fetch('https://74f0-153-150-176-69.ngrok-free.app/add/keywords',  {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -76,7 +76,7 @@
             const deleteKeywordInput = document.getElementById('deleteKeywordInput');
             const hibikikeyword = deleteKeywordInput.value.trim();
             if (hibikikeyword) {
-                fetch(`http://localhost:4000/delete/keywords`, {
+                fetch(`https://74f0-153-150-176-69.ngrok-free.app/delete/keywords`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
