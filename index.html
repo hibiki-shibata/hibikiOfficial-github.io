@@ -38,11 +38,17 @@
     <script>
     
         // Fetch data list when the page loaded
-        fetch('https://74f0-153-150-176-69.ngrok-free.app')
+        fetch('https://74f0-153-150-176-69.ngrok-free.app', {
+                method: "get",
+                headers: new Headers({
+                    "ngrok-skip-browser-warning": "69420",
+                }),
+                })
             .then(response => response.json())
             .then(data => {
                 // Update the DOM with the received data
                 const dataList = document.getElementById('dataList');
+                console.log(data)
                 data.keywords.forEach(keyword => {
                     const listItem = document.createElement('li');
                     listItem.textContent = keyword;
