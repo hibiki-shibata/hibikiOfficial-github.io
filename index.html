@@ -38,10 +38,10 @@
     <script>
     
         // Fetch data list when the page loaded
-        fetch('https://74f0-153-150-176-69.ngrok-free.app', {
+        fetch('https://9413-153-150-176-69.ngrok-free.app/yuhoweb', {
                 method: "get",
                 headers: new Headers({
-                    "ngrok-skip-browser-warning": "69420",
+                    "ngrok-skip-browser-warning": "23423423",
                 }),
                 })
             .then(response => response.json())
@@ -64,7 +64,7 @@
             const keywordInput = document.getElementById('inputKeyword');            
             const hibikikeyword = keywordInput.value.trim();
                 if (hibikikeyword) {
-                    fetch('https://74f0-153-150-176-69.ngrok-free.app/add/keywords',  {
+                    fetch('https://9413-153-150-176-69.ngrok-free.app/add/keywords',  {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -82,7 +82,7 @@
             const deleteKeywordInput = document.getElementById('deleteKeywordInput');
             const hibikikeyword = deleteKeywordInput.value.trim();
             if (hibikikeyword) {
-                fetch(`https://74f0-153-150-176-69.ngrok-free.app/delete/keywords`, {
+                fetch(`https://9413-153-150-176-69.ngrok-free.app/delete/keywords`, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
