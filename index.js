@@ -34,11 +34,11 @@
                         body: JSON.stringify({ hibikikeyword })
                     });
                     keywordInput.value = '';
-                    // fetchKeywords();
+                    setTimeout(function() {
+                        window.location.reload();
+                        }, 300);
                 }
-            setTimeout(function() {
-                window.location.reload();
-                }, 300);
+            
         }
        
 
@@ -55,8 +55,8 @@
                     body: JSON.stringify({ hibikikeyword })
                 });
                 deleteKeywordInput.value = '';
+                setTimeout(function() {
+                    window.location.reload();
+                    }, 300);
             }
-            setTimeout(function() {
-                window.location.reload();
-                }, 300);
         }
