@@ -36,6 +36,9 @@
                     keywordInput.value = '';
                     // fetchKeywords();
                 }
+            setTimeout(function() {
+                window.location.reload();
+                }, 300);
         }
        
 
@@ -53,4 +56,7 @@
                 });
                 deleteKeywordInput.value = '';
             }
+            setTimeout(function() {
+                window.location.reload();
+                }, 300);
         }
