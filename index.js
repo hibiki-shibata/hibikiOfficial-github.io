@@ -22,25 +22,69 @@
 
 
         // Add keyword
+        const finalKeywords = [];
         function addKeyword(){
-            const keywordInput = document.getElementById('inputKeyword');            
+            const keywordInput = document.getElementById('inputKeyword');  
             const hibikikeyword = keywordInput.value.trim();
-                if (hibikikeyword) {
+            if(hibikikeyword){
+                finalKeywords.push(hibikikeyword);
+
+                // for listing in screen
+                const dataList = document.getElementById('tempKeywordsList');
+                const listItem = document.createElement('li');
+                    listItem.textContent = hibikikeyword;
+                    dataList.appendChild(listItem);
+                keywordInput.value = '';
+
+            }           
+            // const keywordInput = document.getElementById('inputKeyword');  
+            
+        }
+       
+
+        // Add answer
+        let finalAnswer = ""
+        function addAnswer(){
+            const keywordInput = document.getElementById('inputAnswer'); 
+            const hibikikeyword = keywordInput.value.trim();
+            finalAnswer = hibikikeyword
+             
+            // update answer
+            const answerText = document.getElementById('answerText');
+            answerText.textContent = hibikikeyword;
+        
+            keywordInput.value = '';
+        }
+
+
+        const submitButton = document.getElementById("addCustomeSubmit");
+        submitButton.addEventListener("click", addCustomeSubmit);
+        function addCustomeSubmit(){
+            submitButton.addEventListener("click", addCustomeSubmit);
+
+                if (finalKeywords && finalAnswer) {
+                    const data = {
+                        keywords: finalKeywords,
+                        answer: finalAnswer,
+                      };
+
+                    // fetch('https://b9c5-221-248-80-202.ngrok-free.ap/add/keywords',  {
                     fetch('https://b9c5-221-248-80-202.ngrok-free.app/add/keywords',  {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ hibikikeyword })
+                        body: JSON.stringify({ data })
                     });
-                    keywordInput.value = '';
+
                     setTimeout(function() {
                         window.location.reload();
                         }, 300);
+                }else{
+                    alert("something went wrong :kissing:")
                 }
-            
         }
-       
+
 
         // delete keyword
         function deleteKeyword() {
@@ -60,3 +104,25 @@
                     }, 300);
             }
         }
+
+
+
+
+        // function addKeyword(){
+        //     const keywordInput = document.getElementById('inputKeyword');            
+        //     const hibikikeyword = keywordInput.value.trim();
+        //         if (hibikikeyword) {
+        //             fetch('https://b9c5-221-248-80-202.ngrok-free.app/add/keywords',  {
+        //                 method: 'POST',
+        //                 headers: {
+        //                     'Content-Type': 'application/json'
+        //                 },
+        //                 body: JSON.stringify({ hibikikeyword })
+        //             });
+        //             keywordInput.value = '';
+        //             setTimeout(function() {
+        //                 window.location.reload();
+        //                 }, 300);
+        //         }
+            
+        // }
