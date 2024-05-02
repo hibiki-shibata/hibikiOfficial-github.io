@@ -20,6 +20,20 @@
             .catch(error => console.error('Error:', error));
 
 
+        // Display custome stored data
+        const data = [
+            { keywords: ["stfu", "shutit", "yum"], Answer: "seagull" },
+            { keywords: ["bird", "funny", "pink"], Answer: "flamingo" },
+            // You can add more data objects here following the same format
+          ];
+        const answersContainer = document.getElementById('customeList');
+
+        data.forEach(item => {
+            const answerElement = document.createElement('p');
+            answerElement.textContent = `Keywords: ${item.keywords.join(', ')} - Answer: ${item.Answer}`;
+            answersContainer.appendChild(answerElement);})
+
+
 
         // Add keyword
         const finalKeywords = [];

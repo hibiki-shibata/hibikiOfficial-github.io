@@ -35,7 +35,7 @@
 
     <h1 class="title">Yuho Bot Keywords Manager</h1>
 
-        <h2>Add keyword ✅:</h2>
+        <h2>Add Custome 🤓:</h2>
         <label for="keyword1">Keyword:</label>
         <input type="text" id="inputKeyword">
         <button onclick="addKeyword()">Add Keyword</button>
@@ -47,22 +47,25 @@
         <button onclick="addAnswer()">Add Keyword</button>
 
         <ul id="tempKeywordsList"></ul>
-        <p id="answerText"></p>
+        <p id="answerText" style="color: rgb(167, 33, 33);"></p>
 
-        <button id="addCustomeSubmit">Submit</button>
+        <button id="addCustomeSubmit" style="color: rgb(40, 0, 173);"">Submit</button>
         
             <!-- <ul id="keywordList" onload="fetchKeywords()"></ul> -->
 
-        <h2>Delete Keyword 🚮:</h2>
-        <label for="keyword2">Keyword:</label>
+        <h2>Delete Custome 🚮:</h2>
+        <label for="keyword2">Answer:</label>
         <input type="text" id="deleteKeywordInput">
-        <button onclick="deleteKeyword()">Delete Keyword</button>
+        <button onclick="deleteKeyword()">Submit</button>
+        <p4>※Copy the answer to delete, the keywords will also be deleted</p4>
 
 
         <h2>Keywords list:</h2>
         <ul id="dataList">
             <!-- Data will be displayed here -->
         </ul>
+
+        <div id="customeList"></div>
 
         <h3>This's all😗</h3>
 
