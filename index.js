@@ -129,7 +129,7 @@ function addCustomeSubmit(){
                 window.location.reload();
                 }, 200);
         }else{
-            alert("something went wrong :kissing:")
+            alert("something went wrong😗\nPlease make sure Keywords or Answer field is not blank bitch😘")
         }
 }
 
