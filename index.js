@@ -2,7 +2,7 @@
 // Fetch Database data
 const answersContainer = document.getElementById('customeList');
 async function fetchData () {
-    const request = await fetch('http://localhost:4000/', {
+    const request = await fetch('https://3b90-153-150-176-69.ngrok-free.app', {
         method: "get",
         headers: new Headers({
             "ngrok-skip-browser-warning": "23423423",
@@ -54,7 +54,7 @@ customListLoader()
 
 // delete keyword
 function deleteKeyword(answer) {
-    fetch(`http://localhost:4000/delete/keywords`, {
+    fetch(`https://3b90-153-150-176-69.ngrok-free.app/delete/keywords`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -117,7 +117,7 @@ function addCustomeSubmit(){
                 };
 
             // fetch('https://b9c5-221-248-80-202.ngrok-free.ap/add/keywords',  {
-            fetch('http://localhost:4000/add/keywords',  {
+            fetch('https://3b90-153-150-176-69.ngrok-free.app/add/keywords',  {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
