@@ -2,7 +2,7 @@
 // Fetch Database data
 const answersContainer = document.getElementById('customeList');
 async function fetchData () {
-    const request = await fetch('https://3b90-153-150-176-69.ngrok-free.app/yuhoweb', {
+    const request = await fetch('https://8baa-153-150-176-69.ngrok-free.app/yuhoweb', {
         method: "get",
         headers: new Headers({
             "ngrok-skip-browser-warning": "23423423",
