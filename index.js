@@ -2,7 +2,8 @@
 // Fetch Database data
 const answersContainer = document.getElementById('customeList');
 async function fetchData () {
-    const request = await fetch('https://8baa-153-150-176-69.ngrok-free.app/yuhoweb', {
+    // const request = await fetch('https://8baa-153-150-176-69.ngrok-free.app/yuhoweb', {
+    const request = await fetch('http://localhost:4000', {
         method: "get",
         headers: new Headers({
             "ngrok-skip-browser-warning": "23423423",
@@ -14,6 +15,7 @@ async function fetchData () {
 
     return jsonFinal;
 }
+
 
 // Display Database data
 function printCustomList (items) {
@@ -29,9 +31,16 @@ function printCustomList (items) {
         deleteButtonElement.textContent = "Delete"
         deleteButtonElement.addEventListener("click", () => {
             deleteKeyword(item.answer);
-            setTimeout(function() {
-                window.location.reload();
-                }, 200);
+
+            // delete custome list
+            const anchor = document.getElementById("dataList")
+            while (anchor.firstChild) {
+                anchor.removeChild(anchor.firstChild);
+            }
+
+            // Re-fetch the database data
+            customListLoader()            
+    
         })
 
         listElement.appendChild(listItemElement);
@@ -54,7 +63,7 @@ customListLoader()
 
 // delete keyword
 function deleteKeyword(answer) {
-    fetch(`https://3b90-153-150-176-69.ngrok-free.app/delete/keywords`, {
+    fetch(`http://localhost:4000/delete/keywords`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'
@@ -64,9 +73,8 @@ function deleteKeyword(answer) {
 }
 
 
-
 // Add keyword
-const finalKeywords = [];
+let finalKeywords = [];
 function addKeyword(){
     const keywordInput = document.getElementById('inputKeyword');  
     const hibikikeyword = keywordInput.value.trim();
@@ -89,8 +97,8 @@ function addKeyword(){
 // Add answer
 let finalAnswer = ""
 function addAnswer(){
-    const keywordInput = document.getElementById('inputAnswer'); 
-    const hibikikeyword = keywordInput.value.trim();
+    const answerInput = document.getElementById('inputAnswer'); 
+    const hibikikeyword = answerInput.value.trim();
     if(hibikikeyword){
         finalAnswer = hibikikeyword
         
@@ -98,9 +106,27 @@ function addAnswer(){
         const answerText = document.getElementById('answerText');
         answerText.textContent = hibikikeyword;
     
-        keywordInput.value = '';
+        answerInput.value = '';
 
     }
+}
+
+
+function reloadWithoutRequest(){
+    const deleteAnswerInput = document.getElementById('inputAnswer'); 
+    const deleteKeywordInput = document.getElementById('inputKeyword');
+    const answerText = document.getElementById('answerText');
+    const dataList = document.getElementById('tempKeywordsList');
+
+    while (dataList.firstChild) {
+        dataList.removeChild(dataList.firstChild);
+    }
+
+    deleteAnswerInput.value = '';
+    finalAnswer = '';
+    deleteKeywordInput.value = '';
+    finalKeywords = [];
+    answerText.textContent = "";
 }
 
 
@@ -110,50 +136,33 @@ submitButton.addEventListener("click", addCustomeSubmit);
 function addCustomeSubmit(){
     submitButton.addEventListener("click", addCustomeSubmit);
 
-        if (finalKeywords && finalAnswer) {
+        if (finalKeywords[0] && finalAnswer) {
             const data = {
                 keywords: finalKeywords,
                 answer: finalAnswer,
                 };
 
             // fetch('https://b9c5-221-248-80-202.ngrok-free.ap/add/keywords',  {
-            fetch('https://3b90-153-150-176-69.ngrok-free.app/add/keywords',  {
+            fetch('http://localhost:4000/add/keywords',  {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ data })
             });
+            reloadWithoutRequest()
 
-            setTimeout(function() {
-                window.location.reload();
-                }, 200);
+              // delete custome list
+              const anchor = document.getElementById("dataList")
+              while (anchor.firstChild) {
+                  anchor.removeChild(anchor.firstChild);
+              }
+              
+              // Re-fetch the database data
+              customListLoader()    
+
+           
         }else{
             alert("something went wrong😗\nPlease make sure Keywords or Answer field is not blank bitch😘")
         }
 }
-
-
-
-
-
-
-
-// function addKeyword(){
-//     const keywordInput = document.getElementById('inputKeyword');            
-//     const hibikikeyword = keywordInput.value.trim();
-//         if (hibikikeyword) {
-//             fetch('https://b9c5-221-248-80-202.ngrok-free.app/add/keywords',  {
-//                 method: 'POST',
-//                 headers: {
-//                     'Content-Type': 'application/json'
-//                 },
-//                 body: JSON.stringify({ hibikikeyword })
-//             });
-//             keywordInput.value = '';
-//             setTimeout(function() {
-//                 window.location.reload();
-//                 }, 300);
-//         }
-    
-// }
