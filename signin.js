@@ -33,6 +33,8 @@ async function fetchAuthToken (inputPassword) {
     if (request.status == 400){
      alert ("Your password is incorrect😗") 
      throw Error
+    } else if (request.status !== 200){
+     alert("Internal server error")  
     }
 
     const json = await request.json();
