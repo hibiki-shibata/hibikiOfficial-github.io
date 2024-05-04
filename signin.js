@@ -35,6 +35,7 @@ async function fetchAuthToken (inputPassword) {
      throw Error
     } else if (request.status !== 200){
      alert("Internal server error")  
+     throw Error
     }
 
     const json = await request.json();
@@ -50,3 +51,15 @@ function showIndexHtml() {
     document.getElementById('signin').style.display = 'none'
 }
 
+
+
+
+const inputPassward = document.getElementById('inputPassword');
+inputPassward.addEventListener("keypress", function(event) {
+
+    if (event.key == "Enter") {        
+      event.preventDefault();
+      document.getElementById('signinButton').click();
+
+    }
+  });

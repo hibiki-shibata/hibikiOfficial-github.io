@@ -13,7 +13,9 @@
 
     <h1 class="title">Yuho Bot Keywords Manager</h1>
 
-        <h2>Add Custom 🤓:</h2>
+        <h2>Add Custom 🤓:
+            <button onclick="reloadWithoutRequest()" style="color: springgreen; ">Reset Draft</button>
+        </h2>
         <label for="keyword1">Keyword:</label>
         <input type="text" id="inputKeyword">
         <button onclick="addKeyword()">Add Keyword</button>
@@ -31,7 +33,7 @@
         
 
         <h2>Custom list ✅:
-        <button onclick="customListLoader()" style="color: springgreen;">Load the list</button>
+        <button onclick="customListLoader()" style="color: springgreen;">Load List</button>
         </h2>
 
         <ul id="dataList">
