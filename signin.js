@@ -22,7 +22,7 @@ async function falseToTrue(){
 
 
 async function fetchAuthToken (inputPassword) {
-    const request = await fetch('http://localhost:5000', {
+    const request = await fetch('http://localhost:3000/yuhoAuth', {
         method: "POST",
         headers: new Headers({
             "ngrok-skip-browser-warning": "23423423",

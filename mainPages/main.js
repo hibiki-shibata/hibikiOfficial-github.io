@@ -146,7 +146,7 @@ function addCustomeSubmit(){
             fetch('http://localhost:4000/add/keywords',  {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ data })
             });
