@@ -57,7 +57,7 @@ async function customListLoader () {
     printCustomList(items)
 }
 
-customListLoader()
+// customListLoader()
 
 
 
