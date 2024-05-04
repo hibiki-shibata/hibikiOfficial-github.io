@@ -1,4 +1,5 @@
 
+// import{ backendRequestToken }from '../signin';
 // Fetch Database data
 const answersContainer = document.getElementById('customeList');
 async function fetchData () {
@@ -53,6 +54,10 @@ function printCustomList (items) {
 
 
 async function customListLoader () {
+    alert("customeListLoader loaded")
+    
+    await alert(storedBackendRequestToken)
+
     const items = await fetchData();
     printCustomList(items)
 }
@@ -163,6 +168,9 @@ function addCustomeSubmit(){
 
            
         }else{
-            alert("something went wrong😗\nPlease make sure Keywords or Answer field is not blank bitch😘")
+            alert("something went wrong😗\nPlease make sure Keywords or Answer field is not blank😘")
         }
 }
+
+
+

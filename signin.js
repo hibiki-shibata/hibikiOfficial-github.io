@@ -1,3 +1,4 @@
+let backendRequestToken = ""
 
 async function falseToTrue(){
 
@@ -8,21 +9,23 @@ async function falseToTrue(){
         throw Error
     }
 
-    const fetchedToken = await fetchAuthToken(getPassward)   
+    const fetchAuthTokens = await fetchAuthToken(getPassward)   
+    // fetchAuthTokens.backendRequestToken
+    
     getPassward = ""
     
-    if (fetchedToken != 13232){
+    if (fetchAuthTokens.token != 13232){
         alert("Authorization failed")
         throw Error
     }else{
-        showIndexHtml();
+        showIndexHtml();         
     }
     
 }
 
 
 async function fetchAuthToken (inputPassword) {
-    const request = await fetch('http://localhost:3000/yuhoAuth', {
+    const request = await fetch('http://localhost:5000/', {
         method: "POST",
         headers: new Headers({
             "ngrok-skip-browser-warning": "23423423",
@@ -40,8 +43,9 @@ async function fetchAuthToken (inputPassword) {
 
     const json = await request.json();
     token = json.authToken
-     
-    return token
+    backendRequestToken = json.backendRequestToken
+    
+    return {token, backendRequestToken};
 }
 
 
@@ -63,3 +67,5 @@ inputPassward.addEventListener("keypress", function(event) {
 
     }
   });
+
+  
