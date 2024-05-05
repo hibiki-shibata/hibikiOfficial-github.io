@@ -13,29 +13,32 @@
 
     <link rel="stylesheet" type="text/css" href="main.css">
 
-    <h1 class="title">Yuho Bot Keywords Manager</h1>
+    <h1 class="title" style="color: rgb(39, 75, 232);">Yuho The Tech Support Keywords Manager</h1>
 
-    <h2>Add Custom 🤓:
-        <button onclick="reloadWithoutRequest()" style="color: springgreen; ">Reset Draft</button>
-    </h2>
-    <label for="keyword1">Keyword:</label>
+    <h2>Add Custom 🤓:</h2>
+    <label for="keyword1" style="color:aqua;">Keyword:</label>
     <input type="text" id="inputKeyword">
-    <button onclick="addKeyword()">Add Keyword</button>
+    <button onclick="addKeyword()" style="width: 80px;">Add</button>
     <p4>※No blank</p4>
 
     <div></div>
-    <label for="answer">Answer:</label>
+
+    <label for="answer" style="color: rgb(77, 243, 124);">Answer:</label>
     <input type="text" id="inputAnswer">
-    <button onclick="addAnswer()">Add Answer</button>
-
-    <ul id="tempKeywordsList"></ul>
-    <p id="answerText" style="color: rgb(167, 33, 33);"></p>
-
-    <button id="addCustomeSubmit" style="color: rgb(40, 0, 173);">Submit</button>
+    <button onclick="addAnswer()" style="width: 80px;">Add</button>
+    <p4>※No blank</p4>
 
 
-    <h2>Custom list ✅:
-        <button onclick="customListLoader()" style="color: springgreen;">Load List</button>
+    <ul id="tempKeywordsList" style="color:aqua;"></ul>
+
+    <p id="answerText" style="color: rgb(77, 243, 124);"></p>
+
+    <button id="resetDraftButton" onclick="reloadWithoutRequest()">Reset Draft</button>
+    <button id="addCustomeSubmit" style="color: white;">Submit</button>
+
+
+    <h2 style="margin-top: 80px;">Custom list ✅:
+        <button onclick="customListLoader()" style="width: 135px;">Get List</button>
     </h2>
 
     <ul id="dataList">
@@ -44,7 +47,8 @@
 
     <div id="customeList"></div>
 
-    <h3>This's all😗</h3>
+    <h3 style="font-size: small; color: rgb(39, 75, 232);">※If the message includes all keywords => Yuho will answer
+    </h3>
     <h3 id="backendToken"></h3>
 
     <script src="main.js"></script>

@@ -30,7 +30,7 @@ button {
   height: 40px;
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: rgb(118, 223, 255);
   text-align: 0;
   margin-left: 6px;
   border: solid;
@@ -38,12 +38,14 @@ button {
   }
 
   button:hover{
-    background-color: rgb(18, 21, 21);
+    background-color: rgb(29, 128, 203);
   }
 
   button:active{
-    background-color: rgb(27, 153, 255);
+    background-color: rgb(8, 33, 141);
   }
+
+  
 
 
   input{

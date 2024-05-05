@@ -1,3 +1,8 @@
+const resetDraftButton = document.getElementById("resetDraftButton");
+const newCustomSubmitButton = document.getElementById("addCustomeSubmit");
+resetDraftButton.style.display = "none";
+newCustomSubmitButton.style.display = "none";
+
 
 // import{ backendRequestToken }from '../signin';
 // Fetch Database data
@@ -106,6 +111,9 @@ function addKeyword() {
         dataList.appendChild(listItem);
         keywordInput.value = '';
 
+        resetDraftButton.style.display = "inline-block";
+        newCustomSubmitButton.style.display = "inline-block";
+
     }
     // const keywordInput = document.getElementById('inputKeyword');  
 
@@ -122,9 +130,12 @@ function addAnswer() {
 
         // update answer
         const answerText = document.getElementById('answerText');
-        answerText.textContent = hibikikeyword;
+        answerText.textContent = " Answer: " + hibikikeyword;
 
         answerInput.value = '';
+
+        resetDraftButton.style.display = "inline-block";
+        newCustomSubmitButton.style.display = "inline-block";
 
     }
 }
@@ -145,6 +156,8 @@ function reloadWithoutRequest() {
     deleteKeywordInput.value = '';
     finalKeywords = [];
     answerText.textContent = "";
+    resetDraftButton.style.display = "none";
+    newCustomSubmitButton.style.display = "none";
 }
 
 
