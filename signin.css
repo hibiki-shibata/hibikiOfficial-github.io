@@ -5,6 +5,9 @@ body, html {
     width: 100%;
     overflow: hidden;
     background-color: rgb(4, 119, 207);
+    background-image: url('./signin.png'); 
+    background-size: cover;  
+    /* background-position: center;  */
     
    
      /* Ensure full height of viewport */
