@@ -30,27 +30,25 @@ async function falseToTrue(){
 
 
 async function fetchAuthToken (inputPassword) {
-    const request = await fetch('http://localhost:5000/', {
-        method: "POST",
-        headers: new Headers({
-            "ngrok-skip-browser-warning": "23423423",
-        }),
-        body: JSON.stringify({ inputPassword })
-    });
+    try{
+        const request = await fetch('http://localhost:5000/', {
+            method: "POST",
+            headers: new Headers({
+                "ngrok-skip-browser-warning": "23423423",
+            }),
+            body: JSON.stringify({ inputPassword })
+        });
 
-    if (request.status == 400){
-     alert ("Your password is incorrect😗") 
-     throw Error
-    } else if (request.status !== 200){
-     alert("Internal server error")  
-     throw Error
+        const json = await request.json();
+        token = json.authToken
+        backendRequestToken = json.backendRequestToken
+        
+        return {token, backendRequestToken};
+
+
+    }catch(error){
+            alert("Internal server error:)\nMake sure your password might be incorrect😗 Bitch ahahaha😘")  
     }
-
-    const json = await request.json();
-    token = json.authToken
-    backendRequestToken = json.backendRequestToken
-    
-    return {token, backendRequestToken};
 }
 
 
