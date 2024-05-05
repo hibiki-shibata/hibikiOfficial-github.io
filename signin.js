@@ -1,3 +1,4 @@
+localStorage.removeItem("secretToken");
 let backendRequestToken = ""
 
 async function falseToTrue(){
@@ -11,14 +12,18 @@ async function falseToTrue(){
 
     const fetchAuthTokens = await fetchAuthToken(getPassward)   
     // fetchAuthTokens.backendRequestToken
-    
     getPassward = ""
     
     if (fetchAuthTokens.token != 13232){
         alert("Authorization failed")
         throw Error
     }else{
-        showIndexHtml();         
+        showIndexHtml(); 
+
+
+        localStorage.setItem("secretToken", fetchAuthTokens.backendRequestToken);
+        let footerTokenDisplay = document.getElementById("footerAcessToken")
+        footerTokenDisplay.innerHTML = `You're logged in`                            
     }
     
 }

@@ -3,13 +3,19 @@
 // Fetch Database data
 const answersContainer = document.getElementById('customeList');
 async function fetchData () {
+const accessToken = localStorage.getItem("secretToken");
+
     // const request = await fetch('https://8baa-153-150-176-69.ngrok-free.app/yuhoweb', {
     const request = await fetch('http://localhost:4000', {
         method: "get",
         headers: new Headers({
             "ngrok-skip-browser-warning": "23423423",
+            "Authorization": `${accessToken}` 
         }),
     });
+
+     if(request.status !== 200) alert("Refreshing custom list data failed😗")
+    
 
     const json = await request.json();
     const jsonFinal = json.responseData
@@ -54,10 +60,6 @@ function printCustomList (items) {
 
 
 async function customListLoader () {
-    alert("customeListLoader loaded")
-    
-    await alert(storedBackendRequestToken)
-
     const items = await fetchData();
     printCustomList(items)
 }
@@ -68,10 +70,13 @@ async function customListLoader () {
 
 // delete keyword
 function deleteKeyword(answer) {
+    const accessToken = localStorage.getItem("secretToken");
+
     fetch(`http://localhost:4000/delete/keywords`, {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization': `${accessToken}`
         },
         body: JSON.stringify({ answer })
     });
@@ -142,6 +147,7 @@ function addCustomeSubmit(){
     submitButton.addEventListener("click", addCustomeSubmit);
 
         if (finalKeywords[0] && finalAnswer) {
+            const accessToken = localStorage.getItem("secretToken");
             const data = {
                 keywords: finalKeywords,
                 answer: finalAnswer,
@@ -152,10 +158,12 @@ function addCustomeSubmit(){
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `${accessToken}`
                 },
                 body: JSON.stringify({ data })
             });
             reloadWithoutRequest()
+            
 
               // delete custome list
               const anchor = document.getElementById("dataList")
