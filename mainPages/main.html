@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuho the tech support</title>
     <link rel="icon" type="image/png" href="../wolt.png">
 </head>
-<body >
+
+<body>
 
 
     <link rel="stylesheet" type="text/css" href="main.css">
 
     <h1 class="title">Yuho Bot Keywords Manager</h1>
 
-        <h2>Add Custom 🤓:
-            <button onclick="reloadWithoutRequest()" style="color: springgreen; ">Reset Draft</button>
-        </h2>
-        <label for="keyword1">Keyword:</label>
-        <input type="text" id="inputKeyword">
-        <button onclick="addKeyword()">Add Keyword</button>
-        <p4>※No blank</p4>
+    <h2>Add Custom 🤓:
+        <button onclick="reloadWithoutRequest()" style="color: springgreen; ">Reset Draft</button>
+    </h2>
+    <label for="keyword1">Keyword:</label>
+    <input type="text" id="inputKeyword">
+    <button onclick="addKeyword()">Add Keyword</button>
+    <p4>※No blank</p4>
 
-        <div></div>
-        <label for="answer">Answer:</label>
-        <input type="text" id="inputAnswer">
-        <button onclick="addAnswer()">Add Answer</button>
+    <div></div>
+    <label for="answer">Answer:</label>
+    <input type="text" id="inputAnswer">
+    <button onclick="addAnswer()">Add Answer</button>
 
-        <ul id="tempKeywordsList"></ul>
-        <p id="answerText" style="color: rgb(167, 33, 33);"></p>
+    <ul id="tempKeywordsList"></ul>
+    <p id="answerText" style="color: rgb(167, 33, 33);"></p>
 
-        <button id="addCustomeSubmit" style="color: rgb(40, 0, 173);">Submit</button>
-        
+    <button id="addCustomeSubmit" style="color: rgb(40, 0, 173);">Submit</button>
 
-        <h2>Custom list ✅:
+
+    <h2>Custom list ✅:
         <button onclick="customListLoader()" style="color: springgreen;">Load List</button>
-        </h2>
+    </h2>
 
-        <ul id="dataList">
-            <!-- Data will be displayed here -->
-        </ul>
+    <ul id="dataList">
+        <!-- Data will be displayed here -->
+    </ul>
 
-        <div id="customeList"></div>
+    <div id="customeList"></div>
 
-        <h3>This's all😗</h3>
-        <h3 id="backendToken"></h3>
+    <h3>This's all😗</h3>
+    <h3 id="backendToken"></h3>
 
-        <script src="main.js"></script>
+    <script src="main.js"></script>
 
 </body>
+
 </html>

@@ -1,36 +1,36 @@
 localStorage.removeItem("secretToken");
 let backendRequestToken = ""
 
-async function falseToTrue(){
+async function falseToTrue() {
 
     let getPassward = document.getElementById('inputPassword').value;
-    
-    if(!getPassward) {
-        alert("Please enter password nerd😘") 
+
+    if (!getPassward) {
+        alert("Please enter password nerd😘")
         throw Error
     }
 
-    const fetchAuthTokens = await fetchAuthToken(getPassward)   
+    const fetchAuthTokens = await fetchAuthToken(getPassward)
     // fetchAuthTokens.backendRequestToken
     getPassward = ""
-    
-    if (fetchAuthTokens.token != 13232){
+
+    if (fetchAuthTokens.token != 13232) {
         alert("Authorization failed")
         throw Error
-    }else{
-        showIndexHtml(); 
+    } else {
+        showIndexHtml();
 
 
         localStorage.setItem("secretToken", fetchAuthTokens.backendRequestToken);
         let footerTokenDisplay = document.getElementById("footerAcessToken")
-        footerTokenDisplay.innerHTML = `You're logged in`                            
+        footerTokenDisplay.innerHTML = `You're logged in`
     }
-    
+
 }
 
 
-async function fetchAuthToken (inputPassword) {
-    try{
+async function fetchAuthToken(inputPassword) {
+    try {
         const request = await fetch('http://localhost:5000/', {
             method: "POST",
             headers: new Headers({
@@ -42,19 +42,19 @@ async function fetchAuthToken (inputPassword) {
         const json = await request.json();
         token = json.authToken
         backendRequestToken = json.backendRequestToken
-        
-        return {token, backendRequestToken};
+
+        return { token, backendRequestToken };
 
 
-    }catch(error){
-            alert("Internal server error:)\nMake sure your password might be incorrect😗 Bitch ahahaha😘")  
+    } catch (error) {
+        alert("Internal server error:)\nYour password might be incorrect😗 Bitch ahahaha😘")
     }
 }
 
 
 
 function showIndexHtml() {
-    document.getElementById('indexFrame').style.display = 'block';        
+    document.getElementById('indexFrame').style.display = 'block';
     document.getElementById('signin').style.display = 'none'
 }
 
@@ -62,13 +62,13 @@ function showIndexHtml() {
 
 
 const inputPassward = document.getElementById('inputPassword');
-inputPassward.addEventListener("keypress", function(event) {
+inputPassward.addEventListener("keypress", function (event) {
 
-    if (event.key == "Enter") {        
-      event.preventDefault();
-      document.getElementById('signinButton').click();
+    if (event.key == "Enter") {
+        event.preventDefault();
+        document.getElementById('signinButton').click();
 
     }
-  });
+});
 
-  
+
