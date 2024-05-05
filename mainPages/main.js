@@ -7,7 +7,7 @@ async function fetchData() {
         const accessToken = localStorage.getItem("secretToken");
 
         // const request = await fetch('https://8baa-153-150-176-69.ngrok-free.app/yuhoweb', {
-        const request = await fetch('https://d551-153-150-176-69.ngrok-free.app/yuhoweb', {
+        const request = await fetch('https://9c4a-153-150-176-69.ngrok-free.app/yuhoweb', {
             method: "get",
             headers: new Headers({
                 "ngrok-skip-browser-warning": "23423423",
@@ -75,7 +75,7 @@ function deleteKeyword(answer) {
     try {
         const accessToken = localStorage.getItem("secretToken");
 
-        fetch(`https://d551-153-150-176-69.ngrok-free.app/delete/keywords`, {
+        fetch(`https://9c4a-153-150-176-69.ngrok-free.app/delete/keywords`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ function addCustomeSubmit() {
             };
 
             // fetch('https://b9c5-221-248-80-202.ngrok-free.ap/add/keywords',  {
-            fetch('https://d551-153-150-176-69.ngrok-free.app/add/keywords', {
+            fetch('https://9c4a-153-150-176-69.ngrok-free.app/add/keywords', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
