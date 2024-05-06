@@ -130,7 +130,7 @@ function addAnswer() {
 
         // update answer
         const answerText = document.getElementById('answerText');
-        answerText.textContent = " Answer: " + hibikikeyword;
+        answerText.textContent = " => " + hibikikeyword;
 
         answerInput.value = '';
 
