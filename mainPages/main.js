@@ -80,11 +80,11 @@ async function customListLoader() {
 
 
 // delete keyword
-function deleteKeyword(answer) {
+async function deleteKeyword(answer) {
     try {
         const accessToken = localStorage.getItem("secretToken");
 
-        fetch(`https://9d72-221-248-80-202.ngrok-free.app/delete/keywords`, {
+       await fetch(`https://9d72-221-248-80-202.ngrok-free.app/delete/keywords`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
