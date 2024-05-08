@@ -6,7 +6,7 @@ newCustomSubmitButton.style.display = "none";
 
 // import{ backendRequestToken }from '../signin';
 // Fetch Database data
-const answersContainer = document.getElementById('customeList');
+// const answersContainer = document.getElementById('customeList');
 async function fetchData() {
     try {
         const accessToken = localStorage.getItem("secretToken");
@@ -35,6 +35,10 @@ async function fetchData() {
 function printCustomList(items) {
     const anchor = document.getElementById("dataList")
     const listElement = document.createElement("ul");
+
+    while (anchor.firstChild) {
+        anchor.removeChild(anchor.firstChild);
+    }
 
     items.forEach(item => {
         const listItemElement = document.createElement('li');
@@ -198,7 +202,7 @@ function addCustomeSubmit() {
 
 
         } else {
-            alert("something went wrong😗\nPlease make sure Keywords or Answer field is not blank😘")
+            alert("Something went wrong😗\nPlease make sure Keywords or Answer field is not blank😘")
         }
 
     } catch {
