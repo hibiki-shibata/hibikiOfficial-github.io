@@ -6,7 +6,7 @@ async function falseToTrue() {
     let getPassward = document.getElementById('inputPassword').value;
 
     if (!getPassward) {
-        alert("Please enter password nerd😘")
+        alert("Please enter password😘")
         throw Error
     }
 
@@ -48,7 +48,7 @@ async function fetchAuthToken(inputPassword) {
 
 
     } catch (error) {
-        alert("Internal server error:)\nYour password might be incorrect😗 Bitch ahahaha😘")
+        alert("Internal server error:)\nYour password might be incorrect😗😘\nOtherwise, the server is not running🏃")
     }
 }
 
