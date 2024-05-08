@@ -47,17 +47,17 @@ function printCustomList(items) {
 
         const deleteButtonElement = document.createElement("button");
         deleteButtonElement.textContent = "Delete"
-        deleteButtonElement.addEventListener("click", () => {
+        deleteButtonElement.addEventListener("click", async () => {
             deleteKeyword(item.answer);
 
             // delete custome list
             const anchor = document.getElementById("dataList")
-            while (anchor.firstChild) {
+             while (anchor.firstChild) {
                 anchor.removeChild(anchor.firstChild);
             }
 
             // Re-fetch the database data
-            customListLoader()
+            await customListLoader()
 
         })
 
@@ -65,7 +65,7 @@ function printCustomList(items) {
         listItemElement.appendChild(deleteButtonElement);
     });
 
-    console.log(items)
+    // console.log(items)
     anchor.appendChild(listElement)
 }
 
@@ -168,7 +168,7 @@ function reloadWithoutRequest() {
 // Send new custome to Server
 const submitButton = document.getElementById("addCustomeSubmit");
 submitButton.addEventListener("click", addCustomeSubmit);
-function addCustomeSubmit() {
+async function addCustomeSubmit() {
     try {
         submitButton.addEventListener("click", addCustomeSubmit);
 
@@ -180,7 +180,7 @@ function addCustomeSubmit() {
             };
 
             // fetch('https://b9c5-221-248-80-202.ngrok-free.ap/add/keywords',  {
-            fetch('https://9d72-221-248-80-202.ngrok-free.app/add/keywords', {
+            await fetch('https://9d72-221-248-80-202.ngrok-free.app/add/keywords', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -188,7 +188,7 @@ function addCustomeSubmit() {
                 },
                 body: JSON.stringify({ data })
             });
-            reloadWithoutRequest()
+            await reloadWithoutRequest()
 
 
             // delete custome list
