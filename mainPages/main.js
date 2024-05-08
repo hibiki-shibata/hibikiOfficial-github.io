@@ -32,7 +32,7 @@ async function fetchData() {
 
 
 // Display Database data
-function printCustomList(items) {
+async function printCustomList(items) {
     const anchor = document.getElementById("dataList")
     const listElement = document.createElement("ul");
 
@@ -40,7 +40,7 @@ function printCustomList(items) {
         anchor.removeChild(anchor.firstChild);
     }
 
-    items.forEach(item => {
+    await items.forEach(item => {
         const listItemElement = document.createElement('li');
 
         listItemElement.textContent = `KEYWORDS: ${item.keywords.join(', ')} => ANSWERS: ${item.answer}\n`;
