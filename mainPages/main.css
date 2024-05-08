@@ -68,3 +68,23 @@ input {
 input:hover {
   background-color: rgb(217, 217, 217);
 }
+
+
+#inputAnswer{
+  background-color: aqua;
+  /* width: 18%; */
+  /* height: 40px; */
+  bottom: 0px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding-left: 17px;
+  font-size: 23px;
+  font-weight: bold;
+  border: solid;
+  border: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif;
+  color: rgb(65, 14, 14);
+  margin-top: 5px;
+  margin-bottom: -22px;
+
+}

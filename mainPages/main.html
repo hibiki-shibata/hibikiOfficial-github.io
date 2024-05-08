@@ -26,13 +26,14 @@
     <div></div>
 
     <label for="answer" style="color: rgb(77, 243, 124);">- Answer:</label>
-    <input type="text" id="inputAnswer">
+    <!-- <input type="text" id="inputAnswer"> -->
+    <textarea id="inputAnswer"  ></textarea>
     <button onclick="addAnswer()" style="width: 80px;">Add</button>
 
 
     <ul id="tempKeywordsList" style="color:aqua;"></ul>
 
-    <p id="answerText" style="color: rgb(77, 243, 124);"></p>
+    <pre id="answerText" style="color: rgb(77, 243, 124); margin-left: 20px;"></pre>
 
     <button id="resetDraftButton" onclick="reloadWithoutRequest()">Reset Draft</button>
     <button id="addCustomeSubmit" style="color: white;">Submit</button>
