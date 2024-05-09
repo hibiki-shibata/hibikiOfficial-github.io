@@ -20,13 +20,15 @@ async function fetchData() {
             }),
         });
 
+        if(request.status !== 201) throw Error
+
         const json = await request.json();
         const jsonFinal = json.responseData
 
         return jsonFinal;
 
     } catch {
-        alert("Refreshing custom list data failed😗")
+        alert("Refreshing custom list data failed😗\nYour access token might be expired. Please reload the page and login again:)")
     }
 }
 
@@ -180,7 +182,7 @@ async function addCustomeSubmit() {
             };
 
             // fetch('https://b9c5-221-248-80-202.ngrok-free.ap/add/keywords',  {
-            await fetch('https://9d72-221-248-80-202.ngrok-free.app/add/keywords', {
+            const response = await fetch('https://9d72-221-248-80-202.ngrok-free.app/add/keywords', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -188,6 +190,10 @@ async function addCustomeSubmit() {
                 },
                 body: JSON.stringify({ data })
             });
+            
+            if(response.status !== 201)throw Error
+        
+
             await reloadWithoutRequest()
 
 
@@ -206,7 +212,7 @@ async function addCustomeSubmit() {
         }
 
     } catch {
-        alert("Add new custom failed😗")
+        alert("Add new custom failed😗\nYour access token might be expired. Please reload the page and login again:)")
     }
 
 }
