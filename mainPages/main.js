@@ -213,3 +213,23 @@ async function addCustomeSubmit() {
 
 
 
+
+const inputKeyword = document.getElementById('inputKeyword');
+inputKeyword.addEventListener("keypress", function (event) {
+
+    if (event.key == "Enter") {
+        event.preventDefault();
+        addKeyword()
+    }
+
+});
+
+const inputAnswer = document.getElementById('inputAnswer');
+inputAnswer.addEventListener("keypress", function (event) {
+
+    if (event.key == "Enter") {
+        event.preventDefault();
+        addAnswer()
+    }
+    
+});
