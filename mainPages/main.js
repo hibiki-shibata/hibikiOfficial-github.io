@@ -224,12 +224,12 @@ inputKeyword.addEventListener("keypress", function (event) {
 
 });
 
-const inputAnswer = document.getElementById('inputAnswer');
-inputAnswer.addEventListener("keypress", function (event) {
+// const inputAnswer = document.getElementById('inputAnswer');
+// inputAnswer.addEventListener("keypress", function (event) {
 
-    if (event.key == "Enter") {
-        event.preventDefault();
-        addAnswer()
-    }
+//     if (event.key === "Enter") {
+//         event.preventDefault();
+//         addAnswer()
+//     }
     
-});
+// });
