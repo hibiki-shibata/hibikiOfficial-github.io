@@ -20,7 +20,7 @@ async function fetchData() {
             }),
         });
 
-        if(request.status !== 201) throw Error
+        if(request.status !== 201 || request.status !== 200 || request.status !== 204) throw Error
 
         const json = await request.json();
         const jsonFinal = json.responseData
