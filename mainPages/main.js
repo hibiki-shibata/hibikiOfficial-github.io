@@ -172,7 +172,6 @@ const submitButton = document.getElementById("addCustomeSubmit");
 submitButton.addEventListener("click", addCustomeSubmit);
 async function addCustomeSubmit() {
     try {
-        submitButton.addEventListener("click", addCustomeSubmit);
 
         if (finalKeywords[0] && finalAnswer) {
             const accessToken = localStorage.getItem("secretToken");
@@ -221,21 +220,37 @@ async function addCustomeSubmit() {
 
 
 const inputKeyword = document.getElementById('inputKeyword');
-inputKeyword.addEventListener("keypress", function (event) {
+inputKeyword.addEventListener("keydown", function (event) {
 
-    if (event.key == "Enter") {
+    if (event.key === "Enter") {
         event.preventDefault();
         addKeyword()
     }
-
+    
 });
 
-// const inputAnswer = document.getElementById('inputAnswer');
-// inputAnswer.addEventListener("keypress", function (event) {
+const inputAnswer = document.getElementById('inputAnswer');
+inputAnswer.addEventListener("keydown", function (event) {
 
-//     if (event.key === "Enter") {
+   if (event.key == "Enter" && event.shiftKey) {
+            event.target.value += '\n';
+            event.preventDefault();         
+    } else if (event.key === "Enter") {
+        event.preventDefault();
+        addAnswer()
+    }
+    
+});
+
+
+// const commandCustomSubmit = document.getElementById('addCustomeSubmit');
+// commandCustomSubmit.addEventListener("keypress", function (event) {
+
+
+//     if (event.key === "Enter" && event.metaKey) {
 //         event.preventDefault();
-//         addAnswer()
+//         addCustomeSubmit()
 //     }
+
     
 // });
