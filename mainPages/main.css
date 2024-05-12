@@ -52,7 +52,7 @@ button:active {
 
 input {
   background-color: aqua;
-  width: 18%;
+  width: 35%;
   height: 40px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
@@ -72,7 +72,7 @@ input:hover {
 
 #inputAnswer{
   background-color: aqua;
-  /* width: 18%; */
+  width: 36%;
   /* height: 40px; */
   bottom: 0px;
   background-color: rgb(255, 255, 255);
