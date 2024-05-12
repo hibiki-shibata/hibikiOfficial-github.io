@@ -5,7 +5,7 @@ html {
     height: 100%;
     width: 100%;
     overflow: hidden;
-    background-color: black;
+    background-color: #00C2E8;
     background-image: url('./marimekko.png');
     background-size: cover;
     /* background-position: center;  */

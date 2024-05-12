@@ -50,7 +50,7 @@ async function printCustomList(items) {
         const deleteButtonElement = document.createElement("button");
         deleteButtonElement.textContent = "Delete"
         deleteButtonElement.addEventListener("click", async () => {
-            deleteKeyword(item.answer);
+            await deleteKeyword(item.answer);
 
             // delete custome list
             const anchor = document.getElementById("dataList")
@@ -136,7 +136,7 @@ function addAnswer() {
 
         // update answer
         const answerText = document.getElementById('answerText');
-        answerText.textContent = "▼Ansewer text▼ \n" + hibikikeyword;
+        answerText.textContent = "▼Answer text▼ \n" + hibikikeyword;
 
         answerInput.value = '';
 
