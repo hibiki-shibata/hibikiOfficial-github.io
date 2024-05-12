@@ -31,7 +31,7 @@
     <button onclick="addAnswer()" style="width: 80px; margin-top: 63px">Add</button>
 
 
-    <ol id="tempKeywordsList" style="color:aqua; margin-top: 60px;"></ol>
+    <ol id="tempKeywordsList" style="color:aqua; margin-top: 80px;"></ol>
 
     <pre id="answerText" style="color: rgb(77, 243, 124); margin-left: 20px;"></pre>
 
@@ -39,11 +39,14 @@
     <button id="addCustomeSubmit" style="color: white;">Submit</button>
 
 
+
+
+
     <h2 style="margin-top: 80px;">>>> Custom List 🫕:
         <!-- <p2 style="animation: blink 1s 2;"> -->
-        <button onclick="customListLoader()" style="width: 135px; animation: blink 0.3s 4;">GET LIST</button>
+        <button onclick="customListLoader()" style="width: 135px; animation: blink 0.3s 4;">Get List</button>
 
-        <p5 style="font-size: 18px;">※Click Here First And Get Current List</p5>
+        <p5 style="font-size: 18px;">※Click Here First And Get Current List.</p5>
         <!-- </p2> -->
     <style>
         @keyframes blink {
@@ -60,8 +63,10 @@
 
     <!-- <div id="customeList"></div> -->
 
-    <h3 style="font-size: 18px; color:rgb(125, 204, 249)">※If the message includes all keywords => bot will answer
+    <h3 style="font-size: 18px; color:rgb(125, 204, 249)">
+        ※The Bot Will Replies The Answer, When Slack Message In Tech Help Local Channels Or #test-one Includes All The Keywords.
     </h3>
+    
     <h3 id="backendToken"></h3>
 
     <script src="main.js"></script>
