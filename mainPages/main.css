@@ -1,7 +1,9 @@
+
 body {
   background-image: url('../main.png');
   background-size: cover;
-  position: absolute; 
+  background-attachment: fixed;
+
 
   /* background-color: #00C2E8; */
 
@@ -73,7 +75,6 @@ input:hover {
 #inputAnswer{
   background-color: aqua;
   width: 36%;
-  /* height: 40px; */
   bottom: 0px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
