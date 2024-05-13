@@ -237,23 +237,25 @@ inputKeyword.addEventListener("keydown", function (event) {
 
 const inputAnswer = document.getElementById('inputAnswer');
 inputAnswer.addEventListener("keydown", function (event) {
+const commandOrCtrKey = event.metaKey || event.ctrlKey
 
-   if (event.key == "Enter" && event.shiftKey) {
-            event.target.value += '\n';
-            event.preventDefault();         
+   if (event.key == "Enter" && commandOrCtrKey) {
+            event.preventDefault();
+            addAnswer()
+         
     } 
 
 });
 
-const inputAnswerSubmit = document.getElementById('inputAnswer');
-inputAnswerSubmit.addEventListener("keypress", function (event) {
+// const inputAnswerSubmit = document.getElementById('inputAnswer');
+// inputAnswerSubmit.addEventListener("keypress", function (event) {
 
-    if (event.key === "Enter") {
-        event.preventDefault();
-        addAnswer()
-    }
-}
-);
+//     if (event.key === "Enter") {
+//         event.preventDefault();
+//         addAnswer()
+//     }
+// }
+// );
 
 // const commandCustomSubmit = document.getElementById('addCustomeSubmit');
 // commandCustomSubmit.addEventListener("keypress", function (event) {
