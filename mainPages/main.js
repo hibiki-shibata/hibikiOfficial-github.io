@@ -45,7 +45,8 @@ async function printCustomList(items) {
     await items.forEach(item => {
         const listItemElement = document.createElement('li');
 
-        listItemElement.textContent = `KEYWORDS: ${item.keywords.join(', ')} => ANSWERS: ${item.answer}\n`;
+        // listItemElement.textContent = `KEYWORDS: ${item.keywords.join(', ')} => ANSWERS: ${item.answer}\n`;
+        listItemElement.innerHTML = `KEYWORDS► ${item.keywords.join(', ')} <br> ANSWER► ${item.answer}`;
 
         const deleteButtonElement = document.createElement("button");
         deleteButtonElement.textContent = "Delete"
@@ -63,8 +64,12 @@ async function printCustomList(items) {
 
         })
 
+        const listNewLineElement = document.createElement('p2');
+        listNewLineElement.innerHTML = "<br><br>"
+
         listElement.appendChild(listItemElement);
         listItemElement.appendChild(deleteButtonElement);
+        listItemElement.appendChild(listNewLineElement)
     });
 
     // console.log(items)
@@ -236,7 +241,7 @@ inputAnswer.addEventListener("keydown", function (event) {
             event.target.value += '\n';
             event.preventDefault();         
     } 
-    
+
 });
 
 const inputAnswerSubmit = document.getElementById('inputAnswer');
