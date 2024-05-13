@@ -235,13 +235,19 @@ inputAnswer.addEventListener("keydown", function (event) {
    if (event.key == "Enter" && event.shiftKey) {
             event.target.value += '\n';
             event.preventDefault();         
-    } else if (event.key === "Enter") {
-        event.preventDefault();
-        addAnswer()
-    }
+    } 
     
 });
 
+const inputAnswerSubmit = document.getElementById('inputAnswer');
+inputAnswerSubmit.addEventListener("keypress", function (event) {
+
+    if (event.key === "Enter") {
+        event.preventDefault();
+        addAnswer()
+    }
+}
+);
 
 // const commandCustomSubmit = document.getElementById('addCustomeSubmit');
 // commandCustomSubmit.addEventListener("keypress", function (event) {
