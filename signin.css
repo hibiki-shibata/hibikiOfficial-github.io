@@ -83,7 +83,10 @@ html {
     text-align: center;
     padding: 4x;
     position: absolute;
-    top: 98%;
+    /* top: 98%; */
+    margin-bottom: 0%;
+    padding-bottom: 0%;
+    bottom: 0px;
     width: 100%;
 
 }
