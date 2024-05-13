@@ -112,8 +112,9 @@ let finalKeywords = [];
 function addKeyword() {
     const keywordInput = document.getElementById('inputKeyword');
     const hibikikeyword = keywordInput.value.trim();
+
     if (hibikikeyword) {
-        finalKeywords.push(hibikikeyword);
+        finalKeywords.push(hibikikeyword.toLowerCase());
 
         // for listing in screen
         const dataList = document.getElementById('tempKeywordsList');
