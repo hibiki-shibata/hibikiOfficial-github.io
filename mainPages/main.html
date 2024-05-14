@@ -19,8 +19,8 @@
 
     <h2>>>> Add Custom 🫐:</h2>
     <label for="keyword1" style="color:#00C2E8">● Keyword:</label>
-    <input type="text" id="inputKeyword" >
-    <button onclick="addKeyword()" style="width: 80px;">Add</button>
+    <input type="text" id="inputKeyword" placeholder="Add a keyword" >
+    <button onclick="addKeyword()" >Add</button>
     <p5 style="font-size: 18px;">※Multiple Keywords Available</p5>
 
     <div></div>
@@ -36,8 +36,8 @@
     <pre id="answerText" style="color: rgba(63, 255, 42, 0.707); font-size: 25px; margin-left: 20px;"></pre>
     
 
-    <button id="resetDraftButton" onclick="reloadWithoutRequest()">Reset Draft</button>
-    <button id="addCustomeSubmit" style="color: white;">Submit</button>
+    <button class="ResetOrSubmit" id="resetDraftButton" onclick="reloadWithoutRequest()">Reset Draft</button>
+    <button class="ResetOrSubmit" id="addCustomeSubmit" style="color: white;">Submit</button>
 
 
 

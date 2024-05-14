@@ -37,11 +37,14 @@ async function fetchData() {
 async function printCustomList(items) {
     const anchor = document.getElementById("dataList")
     const listElement = document.createElement("ul");
-
+    
+    
+    if(anchor.firstChild){
     while (anchor.firstChild) {
         anchor.removeChild(anchor.firstChild);
-    }
+    }}
 
+    
     await items.forEach(item => {
         const listItemElement = document.createElement('li');
 
@@ -64,12 +67,16 @@ async function printCustomList(items) {
 
         })
 
+        const butoonNewLineElement = document.createElement('br');
         const listNewLineElement = document.createElement('p2');
+
         listNewLineElement.innerHTML = "<br><br>"
 
         listElement.appendChild(listItemElement);
+        listItemElement.appendChild(butoonNewLineElement);
         listItemElement.appendChild(deleteButtonElement);
         listItemElement.appendChild(listNewLineElement)
+        
     });
 
     // console.log(items)

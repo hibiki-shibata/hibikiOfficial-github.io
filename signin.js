@@ -18,12 +18,15 @@ async function falseToTrue() {
         alert("Authorization failed")
         throw Error
     } else {
-        showIndexHtml();
-
 
         localStorage.setItem("secretToken", fetchAuthTokens.backendRequestToken);
         let footerTokenDisplay = document.getElementById("footerAcessToken")
+
+        showIndexHtml();
+    
         footerTokenDisplay.innerHTML = `You're logged in`
+        
+        
     }
 
 }
@@ -54,9 +57,14 @@ async function fetchAuthToken(inputPassword) {
 
 
 
-function showIndexHtml() {
-    document.getElementById('indexFrame').style.display = 'block';
-    document.getElementById('signin').style.display = 'none'
+async function showIndexHtml() {
+     document.getElementById('signin').style.display = 'none'
+     document.getElementById('indexFrame').style.display = 'block';
+
+
+      customListLoader();
+            // alert("hihihi")
+
 }
 
 

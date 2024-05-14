@@ -1,4 +1,12 @@
 
+@font-face{
+  font-family: "WoltHeading-Omnes";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/October/OctoberCyrillicKazakh-Black.woff2") format("woff2"), url("./fonts/October/OctoberCyrillicKazakh-Black.woff") format("woff");
+  unicode-range: u+0400-04ff, u+0500-052f;
+}
+
 body {
   background-image: url('../main.png');
   background-size: cover;
@@ -10,13 +18,24 @@ body {
   /* font-family: WoltHeading-Omnes, -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif; */
   /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
   /* font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", Arimo, "Open Sans", sans-serif; */
-  /* font-family: sans-serif	; */
+  font-family:  "WoltHeading-Omnes";
   color: #ffffff;
   font-size: 23px;
   font-weight: 700;
+}
 
-  /* 10px 10px 0px rgba(255, 37, 106),  Bottom right shadow */
-  /* 3px 5px 2px rgb(37, 48, 255);  */
+.ResetOrSubmit {
+  background-color: rgb(4, 119, 207);
+  border-radius: 8px;
+  width: 180px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(118, 223, 255);
+  text-align: 0;
+  margin-left: 6px;
+  border: solid;
+  border: 0px;
 
 }
 
@@ -30,7 +49,7 @@ body {
 button {
   background-color: rgb(4, 119, 207);
   border-radius: 8px;
-  width: 180px;
+  width: 80px;
   height: 40px;
   font-size: 20px;
   font-weight: bold;
@@ -38,7 +57,7 @@ button {
   text-align: 0;
   margin-left: 6px;
   border: solid;
-  border: 0px;
+  border: 0px; 
 }
 
 button:hover {
@@ -93,4 +112,19 @@ input:hover {
 
 #inputAnswer:hover {
   background-color: rgb(217, 217, 217);
+}
+
+#dataList button{
+  background-color: rgba(175, 15, 15, 0.572);
+  color: white;
+}
+
+#dataList button:hover{
+  background-color: rgba(147, 13, 13, 0.572);
+  color: white;
+}
+
+#dataList button:active{
+  background-color: rgba(110, 11, 11, 0.572);
+  color: white;
 }
