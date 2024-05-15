@@ -19,10 +19,11 @@ async function falseToTrue() {
         throw Error
     } else {
 
+        showIndexHtml();
+        
         localStorage.setItem("secretToken", fetchAuthTokens.backendRequestToken);
         let footerTokenDisplay = document.getElementById("footerAcessToken")
 
-        showIndexHtml();
     
         footerTokenDisplay.innerHTML = `You're logged in`
         
@@ -60,11 +61,6 @@ async function fetchAuthToken(inputPassword) {
 async function showIndexHtml() {
      document.getElementById('signin').style.display = 'none'
      document.getElementById('indexFrame').style.display = 'block';
-
-
-      customListLoader();
-            // alert("hihihi")
-
 }
 
 
